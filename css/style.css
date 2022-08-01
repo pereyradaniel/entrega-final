@@ -1,0 +1,128 @@
+.tituloBuscar{
+font-size: 14px;
+color:grey;
+margin:8px;
+}
+.precio{
+  padding:19px 0 0 0;
+  font-weight: 700;
+}
+
+
+
+.cajaInput{
+  display: inline-block;
+    width: 60%;
+     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+     margin: 30px 5% 10px 5%;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.carousel-item img {
+  width: 50px;
+  margin: auto;
+}
+
+.fa-basket-shopping {
+  margin-left: 25px;
+  font-size: 25px;
+  margin-top: 5px;
+}
+.productoEnCarrito {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+.card-body .btn-estilo {
+  margin: 0;
+  display: block;
+  background-color: #f77e21;
+}
+
+.card-body .btn-estilo:hover {
+  background-color: #fac213;
+}
+
+.seleccion {
+  margin: 30px 0 30px 120px;
+  width: 70%;
+}
+.buscar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 70%;
+  align-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.w-30 {
+  width: 25% !important;
+}
+.d-md-block {
+  background-color: #9c196595;
+}
+
+@media (max-width: 768px) {
+  .d-md-block {
+    background-color: #00000095;
+    display: block !important;
+    width: 50%;
+    margin: auto;
+  }
+  .w-30 {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .seleccion {
+    width: 90%;
+    margin: auto;
+  }
+  .buscar {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  width: 850px!important;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  outline: 0;
+}

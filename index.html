@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <h1 class="text-center">Tienda OnLine</h1>
+
+    <!-- Menu -->
+    <nav class="navbar fixed-top navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tienda OnLine</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            <button id="boton-carrito" type="button" class="btn" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"><i class="fas fa-basket-shopping"></i><span id="contador-carrito">
+                0</span></button>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Inicio de Slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/dulce-de-leche-vacalin-sin-tacc-original-opt.jpg" class="d-block w-30" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Dulce de Leche Vacalin</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/dulce-de-leche-la-serenisima-estilo-colonial-opt.jpg" class="d-block w-30" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Dulce de Leche la Serenisima</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/Coca-cola-Sabor-Original-1-5-opt.jpg" class="d-block w-30" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Coca Cola Sabor Original</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+  </header>
+
+  <main id="productos" class="container">
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Tienda OnLine</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carrito-contenedor">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Precio total: $<span id="precioTotal">0</span></p>
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+          <button id="vaciarCarrito" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vaciar
+            Carrito</button>
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">Finalizar Compra</button>
+
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Dirección de Envío</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Libertador 2222" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputTel" class="form-label">Teléfono</label>
+                  <input class="form-check-inpu" type="text" class="form-control" id="inputTel"
+                    placeholder="11 555-5555" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Referencias de la dirección</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Timbre 2" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputCity" required>
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Localidad</label>
+                  <input type="text" class="form-control" id="inputState" required>
+
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Código Postal</label>
+                  <input type="text" class="form-control" id="inputZip" required>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary" id="enviar">Enviar Pedido</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"
+    integrity="sha256-6DBhCk8kLxWN6B/oKVfvB0ieNTCY2r0rlFlkAjLmrsM=" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/solid.js"
+    integrity="sha384-KPytPVc+hwHwX9HXl4tA7SWJ0Sob6StzjVRoxC4Q4U0JgXujpuVrkBxR0Hsf8A25"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/fontawesome.js"
+    integrity="sha384-9zErGp+biBilRrlpD1l3ExnaqXc8QLITlNpGtb4OL6W1JChl0wwmDNs4U/0UA8L8"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="./js/main.js" type="module"></script>
+
+</body>
+
+</html>
