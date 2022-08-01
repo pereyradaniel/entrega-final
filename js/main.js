@@ -233,7 +233,7 @@ btnEnviar.addEventListener("click", (e)=>  {
     if(localStorage.length != 0){
       vaciarCarrito()
       setTimeout(function(){
-        window.location.href ="/index.html"
+        window.location.href ="./index.html"
     }, 2650);
       Swal.fire({
         position: 'top-end',
@@ -245,7 +245,7 @@ btnEnviar.addEventListener("click", (e)=>  {
 
       })    }else{
         setTimeout(function(){
-          window.location.href ="/index.html"
+          window.location.href ="./index.html"
       }, 2600);
         Swal.fire({
           position: 'top-end',
